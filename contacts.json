@@ -1,0 +1,28 @@
+
+[
+  
+    {
+      "firstName": "Mary",
+      "lastName": "Thorpe",
+      "email": "mary.thorpe@example.com",
+      "favoriteColor": "Green",
+      "birthday": "2001-11-20"
+    },
+
+     {
+      "firstName": "Jenny",
+      "lastName": "Hamby",
+      "email": "jenny.hamby@example.com",
+      "favoriteColor": "Blue",
+      "birthday": "1999-12-07"
+    },
+    
+    {
+      "firstName": "Maria",
+      "lastName": "Battista",
+      "email": "maria.battista@example.com",
+      "favoriteColor": "Pink",
+      "birthday": "1963-02-13"
+    }
+  ]
+

@@ -1,0 +1,13 @@
+//Local Host
+
+### GET http://localhost:8080/contacts
+
+### GET http://localhost:8080/contacts/663713b91c94534055b85a55
+### GET http://localhost:8080/contacts/663713b91c94534055b85a56
+### GET http://localhost:8080/contacts/663713b91c94534055b85a57
+
+// Production deploy
+### GET https://cse341-01-puf9.onrender.com/contacts
+### GET https://cse341-01-puf9.onrender.com/contacts/663713b91c94534055b85a55
+### GET https://cse341-01-puf9.onrender.com/contacts/663713b91c94534055b85a56
+### GET https://cse341-01-puf9.onrender.com/contacts/663713b91c94534055b85a57
