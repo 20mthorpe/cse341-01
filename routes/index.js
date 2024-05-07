@@ -6,6 +6,7 @@ routes.get('/', l01Controller.maryRoute);
 // routes.get('/maria', l01Controller.mariaRoute);
 
 routes.get('/contacts', require('./contacts'));
+routes.get('/contacts/:id', require('./contacts'));
 
 
 
