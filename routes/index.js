@@ -8,6 +8,4 @@ routes.get('/', l01Controller.maryRoute);
 routes.get('/contacts', require('./contacts'));
 routes.get('/contacts/:id', require('./contacts'));
 
-
-
 module.exports = routes;
