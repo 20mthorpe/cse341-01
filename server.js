@@ -6,6 +6,11 @@ const mongodb = require('./database/connect');
 const app = express();
 const port = process.env.PORT || 8080;
 
+const contactsRoutes = require('./routes/contacts');
+
+// middleware
+app.use('/contacts', contactsRoutes);
+
 app.use(bodyParser.json());
 app.use((req, res, next)=> {
     res.setHeader('Access-Control-Allow-Origin', '*');
