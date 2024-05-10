@@ -1,7 +1,8 @@
 const mongodb = require('../database/connect');
 const ObjectId = require('mongodb').ObjectId;
-const Contact = require('../models/contacts');
-const { post } = require('../routes');
+//const Contact = require('../models/contacts');
+const dbtest = require('../models/index');
+const Contact = dbtest.contacts
 
 // Get all contacts
 const getContacts = async (req, res, next) => {
@@ -42,14 +43,18 @@ const getContact = async (req, res, next) => {
 const createContact = async (req, res, next) => {
     try {
         const db = await mongodb.getDb();
-        const contact = new Contact({
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            favoritecolor: req.body.favoritecolor,
-            birthday: req.body.birthday
-        });
-        const result = await contact.save()
+        // const contact = new Contact({
+        //     firstName: req.body.firstName,
+        //     lastName: req.body.lastName,
+        //     email: req.body.email,
+        //     favoriteColor: req.body.favoriteColor,
+        //     birthday: req.body.birthday
+        // });
+        // //const result = await 
+        // contact.save(contact).then((data)=>{
+        //     res.send(data);
+        // })
+        const result = await db.db().collection('contacts').insertOne(req.body);
         res.status(201).json(result);
     } catch (err) {
         console.log(err);
@@ -58,23 +63,42 @@ const createContact = async (req, res, next) => {
 }
 
 // Update a contact
+// const updateContact = async (req, res, next) => {
+//     try {
+//         const updatedContact = await Contact.updateOne({ _id: userId }, { $set: req.body });
+//         res.json(updatedContact);
+//         res.status(200).send('Contact updated');
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).send('Error updating contact');
+//     }
+// }
+
 const updateContact = async (req, res, next) => {
     try {
-        const updatedContact = await Contact.updateOne({ _id: userId }, { $set: req.body });
-        res.json(updatedContact);
-        res.status(200).send('Contact updated');
+        const db = await mongodb.getDb();
+        const userId = new ObjectId(req.params.id);
+        const result = await db.db().collection('contacts').replaceOne({ _id: userId }, req.body);
+        res.status(204).json(result);
     } catch (err) {
         console.log(err);
         res.status(500).send('Error updating contact');
     }
 }
 
+
 // Delete a contact
 const deleteContact = async (req, res, next) => {
     try {
-        const deletedContact = await Contact.remove({ _id: req.params.id });
-        res.json(deletedContact);
-        res.status(200).send('Contact deleted');
+        const db = await mongodb.getDb();
+        const userId = new ObjectId(req.params.id);
+        const deletedContact = await db.db().collection('contacts').deleteOne({ _id: userId });
+        //res.json(deletedContact);
+        if(deletedContact.deletedCount > 0){
+            res.status(200).send();
+        } else {
+            res.status(500).send('Contact not found');
+        }
     } catch (err) {
         console.log(err);
         res.status(500).send('Error deleting contact');
