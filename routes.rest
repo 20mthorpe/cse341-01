@@ -36,17 +36,49 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/contacts/663e855b5150a88d56be84aa HTTP/1.1
+PUT http://localhost:8080/contacts/663713b91c94534055b85a56 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Jenny",
+    "lastName": "Thorpe",
+    "email": "jenny.thorpe@example.com",
+    "favoriteColor": "Green",
+    "birthday": "1999-12-07"
+}
+
+### Don't forget to add an id to the end of the URL!
+###
+DELETE http://localhost:8080/contacts/ HTTP/1.1
+
+
+
+// Render
+###
+POST https://cse341-01-puf9.onrender.com/contacts HTTP/1.1
 Content-Type: application/json
 
 {
     "firstName": "Josh",
-    "lastName": "Herrings",
-    "email": "joshua@example.com",
-    "favoriteColor": "Orange",
-    "birthday": "1999-12-07"
+    "lastName": "Herring",
+    "email": "josh.herring@example.com",
+    "favoriteColor": "Green",
+    "birthday": "2000-09-22"
 }
 
 ###
-DELETE http://localhost:8080/contacts/663e855b5150a88d56be84aa HTTP/1.1
+PUT https://cse341-01-puf9.onrender.com/contacts/663713b91c94534055b85a56 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Jenny",
+    "lastName": "Hamby",
+    "email": "jenny.hamby@example.com",
+    "favoriteColor": "Purple",
+    "birthday": "1999-12-07"
+}
+
+### Need to enter an id!!
+###
+DELETE https://cse341-01-puf9.onrender.com/contacts/ HTTP/1.1
 
