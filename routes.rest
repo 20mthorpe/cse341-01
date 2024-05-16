@@ -28,11 +28,11 @@ POST http://localhost:8080/contacts HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Josh",
-    "lastName": "Herring",
-    "email": "josh.herring@example.com",
-    "favoriteColor": "Green",
-    "birthday": "2000-09-22"
+    "firstName": "Mckenna",
+    "lastName": "Pierson",
+    "email": "mckenna.pierson@example.com",
+    "favoriteColor": "Purple",
+    "birthday": "1999-11-14"
 }
 
 ###
@@ -43,13 +43,13 @@ Content-Type: application/json
     "firstName": "Jenny",
     "lastName": "Thorpe",
     "email": "jenny.thorpe@example.com",
-    "favoriteColor": "Green",
+    "favoriteColor": "Forrest Green",
     "birthday": "1999-12-07"
 }
 
 ### Don't forget to add an id to the end of the URL!
 ###
-DELETE http://localhost:8080/contacts/ HTTP/1.1
+DELETE http://localhost:8080/contacts/66468d13441768e6737f8eb7 HTTP/1.1
 
 
 

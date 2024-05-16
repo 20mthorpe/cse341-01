@@ -6,7 +6,8 @@ const swaggerDocument = require('../swagger-output.json');
 
 router.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-router.use('/', require('./contacts'));
+
+router.use('/contacts', require('./contacts'));
 // routes.get('/jenny', l01Controller.jennyRoute);
 // routes.get('/maria', l01Controller.mariaRoute);
 
