@@ -38,6 +38,40 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "required": true
+                },
+                "lastName": {
+                  "type": "string",
+                  "required": true
+                },
+                "email": {
+                  "type": "string",
+                  "required": true
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "required": true
+                },
+                "birthday": {
+                  "type": "string",
+                  "required": true
+                }
+
+              }
+            }
+          }
+
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -82,7 +116,39 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "required": true
+                },
+                "lastName": {
+                  "type": "string",
+                  "required": true
+                },
+                "email": {
+                  "type": "string",
+                  "required": true
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "required": true
+                },
+                "birthday": {
+                  "type": "string",
+                  "required": true
+                }
+
+              }
+            }
           }
+
         ],
         "responses": {
           "204": {
@@ -106,49 +172,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/contacts/{id}/": {
-      "get": {
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
           },
           "500": {
             "description": "Internal Server Error"
